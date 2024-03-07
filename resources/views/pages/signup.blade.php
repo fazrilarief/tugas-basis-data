@@ -15,9 +15,9 @@
                         <div class="card-body p-0">
                             <!-- Nested Row within Card Body -->
                             <div class="row">
-                                <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                                    <img src="{{ asset('img/logo-unpam.png') }}" alt="Logo Unpam"
-                                        style="height: 20rem; width: 20rem;">
+                                <div class="col-lg-6 d-flex align-items-center justify-content-center">
+                                    <img class="img-fluid px-3 mt-3" style="max-width: 15rem; height: auto;"
+                                        src="{{ asset('img/logo-unpam.png') }}" alt="Logo UNPAM">
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="p-5">
