@@ -5,44 +5,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-hat-cowboy"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">Kelompok <sup>10</sup></div>
-            </a>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('home') }}">
-                    <i class="fas fa-fw fa-home"></i>
-                    <span>Home</span></a>
-            </li>
-
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ route('cake') }}">
-                    <i class="fas fa-fw fa-birthday-cake"></i>
-                    <span>Data Kue</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-
-        </ul>
+        @include('includes.sidebar')
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -65,9 +28,9 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Edit Data Milik : {{ $cakes->nama }}</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Tambahkan Data Kue</h6>
                             @if ($errors->any())
-                                <div class="alert alert-danger">
+                                <div class="alert alert-danger m-4">
                                     <ul>
                                         @foreach ($errors->all() as $error)
                                             <li>{{ $error }}</li>
@@ -76,27 +39,29 @@
                                 </div>
                             @endif
                         </div>
-                        <form action="{{ route('cake.update', $cakes->id) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('cake.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            @method('PUT')
                             <div class="card-body">
                                 <div class="mb-3">
                                     <label for="nama" class="form-label">Nama</label>
-                                    <input type="text" id="nama" name="nama" class="form-control"
-                                        value="{{ old('nama', $cakes->nama) }}" required autofocus>
+                                    <input type="text" id="nama" name="nama" class="form-control" required
+                                        autofocus>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="nim" class="form-label">NIM</label>
-                                    <input type="number" id="nim" name="nim" class="form-control"
-                                        value="{{ old('nama', $cakes->nim) }}" required>
+                                    <label for="harga" class="form-label">Harga</label>
+                                    <input type="number" id="harga" name="harga" class="form-control" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="foto_kue" class="form-label">Foto Kue</label>
-                                    <input type="file" id="foto_kue" name="foto"
-                                        value="{{ old('nama', $cakes->foto) }}" class="form-control mb-3" required>
-                                    <label for="" class="form-label">Foto Saat Ini</label>
-                                    <br>
-                                    <img src="{{ asset('fotoKue/' . $cakes->foto) }}" alt="foto" style="height: 8rem;">
+                                    <input type="file" id="foto_kue" name="foto" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" id="creator_name" name="creator_name" class="form-control"
+                                        value="{{ auth()->user()->name }}" required readonly hidden>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" id="creator_nim" name="creator_nim" class="form-control"
+                                        value="{{ auth()->user()->nim }}" required readonly hidden>
                                 </div>
                             </div>
                             <div class="card-footer">

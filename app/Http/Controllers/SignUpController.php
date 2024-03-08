@@ -10,14 +10,14 @@ class SignUpController extends Controller
 {
     public function index()
     {
-        return view('pages.signup');
+        return view('pages.auth.signup');
     }
 
     public function create_account(Request $request)
     {
         $validated = $request->validate([
             'name' => 'required|unique:App\Models\User,name',
-            'email' => 'required|email|unique:App\Models\User,email|min:8|max:50',
+            'nim' => 'required|unique:App\Models\User,nim',
             'password' => ['required', Password::min(8)->numbers()],
         ]);
 

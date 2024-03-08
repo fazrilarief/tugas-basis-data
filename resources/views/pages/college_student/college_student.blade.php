@@ -5,44 +5,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-hat-cowboy"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">Kelompok <sup>10</sup></div>
-            </a>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('home') }}">
-                    <i class="fas fa-fw fa-home"></i>
-                    <span>Home</span></a>
-            </li>
-
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ route('cake') }}">
-                    <i class="fas fa-fw fa-birthday-cake"></i>
-                    <span>Data Kue</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-
-        </ul>
+        @include('includes.sidebar')
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -65,7 +28,9 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <a href="{{ route('cake.create') }}" class="btn btn-primary">Tambah Data</a>
+                            <a href="{{ route('cake.create') }}" class="btn btn-primary">
+                                <i class="fas fa-fw fa-plus"></i> Tambah Data
+                            </a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -73,8 +38,8 @@
                                     cellspacing="0">
                                     <thead class="table-secondary">
                                         <tr>
-                                            <th>Nama</th>
-                                            <th>NIM</th>
+                                            <th>Nama Kue</th>
+                                            <th>Harga</th>
                                             <th>Kue</th>
                                             <th></th>
                                         </tr>
@@ -90,24 +55,26 @@
                                                             style="heigth: 8rem; width: 8rem;">
                                                     </a>
                                                 </td>
-                                                <td class="align-middle">
+                                                <td>
                                                     <div class="row">
-                                                        <div class="col-12">
-                                                            <div class="btn-group">
-                                                                <a href="{{ route('cake.edit', $item->id) }}"
-                                                                    class="btn btn-warning">Edit</a>
-                                                                <form action="{{ route('cake.destroy', $item->id) }}"
-                                                                    method="POST"
-                                                                    onsubmit="return confirm('Data akan dihapus?')">
-                                                                    @csrf
-                                                                    @method('DELETE')
-                                                                    <button type="submit"
-                                                                        class="btn btn-danger">Hapus</button>
-                                                                </form>
-                                                            </div>
+                                                        <div class="col">
+                                                            <a href="{{ route('cake.edit', $item->id) }}"
+                                                                class="btn btn-warning mb-2">
+                                                                <i class="fas fa-fw fa-pen"></i>
+                                                            </a>
+                                                            <form action="{{ route('cake.destroy', $item->id) }}"
+                                                                method="POST"
+                                                                onsubmit="return confirm('Data akan dihapus?')">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit" class="btn btn-danger">
+                                                                    <i class="fas fa-fw fa-trash"></i>
+                                                                </button>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </td>
+
                                             </tr>
                                         @empty
                                             <tr>

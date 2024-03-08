@@ -15,26 +15,21 @@
                         <div class="card-body p-0">
                             <!-- Nested Row within Card Body -->
                             <div class="row">
-                                <div class="col-lg-6 d-flex align-items-center justify-content-center">
-                                    <img class="img-fluid px-3 mt-3" style="max-width: 15rem; height: auto;"
+                                <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                                    <img class="img-fluid px-4 mt-3" style="max-width: 15rem; height: auto;"
                                         src="{{ asset('img/logo-unpam.png') }}" alt="Logo UNPAM">
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="p-5">
                                         <div class="text-center">
-                                            <h1 class="h4 text-gray-900 mb-4">Buat Akun</h1>
+                                            <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                         </div>
-                                        <form action="{{ route('auth.signup') }}" method="POST" class="user">
+                                        <form action="{{ route('auth.login') }}" method="POST" class="user">
                                             @csrf
                                             <div class="form-group">
-                                                <input type="text" name="name" class="form-control form-control-user"
+                                                <input type="number" name="nim" class="form-control form-control-user"
                                                     id="exampleInputEmail" aria-describedby="emailHelp"
-                                                    placeholder="Your Name...">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="email" name="email" class="form-control form-control-user"
-                                                    id="exampleInputEmail" aria-describedby="emailHelp"
-                                                    placeholder="Enter Email Address...">
+                                                    placeholder="Enter your NIM...">
                                             </div>
                                             <div class="form-group">
                                                 <input type="password" name="password"
@@ -42,13 +37,16 @@
                                                     placeholder="Password">
                                             </div>
                                             <button type="submit" class="btn btn-primary btn-user btn-block">
-                                                Buat Akun
+                                                Login
                                             </button>
                                             <small>
-                                                <p class="m-3 mb-0">Sudah punya akun?
-                                                    <a href="{{ route('login') }}">Login </a>
-                                                </p>
+                                                <p class="m-3 mb-0">Belum punya akun? <a href="{{ route('signup') }}">Buat
+                                                        akun</a></p>
                                             </small>
+                                            <hr>
+                                            <a href="{{ route('index') }}" class="btn btn-google btn-user btn-block">
+                                                <i class="fas fa-arrow-left"></i> Kembali ke halaman awal
+                                            </a>
                                         </form>
                                     </div>
                                 </div>

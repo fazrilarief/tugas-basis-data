@@ -35,8 +35,5 @@ Route::middleware('auth')->group(function () {
         return view('pages.home');
     })->name('home');
 
-    Route::resource('/cake', CakeController::class)
-        ->names([
-            'index' => 'cake',
-        ]);
+    Route::resource('/cake', CakeController::class);
 });

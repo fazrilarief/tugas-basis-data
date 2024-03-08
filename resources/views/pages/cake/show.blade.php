@@ -29,7 +29,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item active">
-                <a class="nav-link" href="{{ route('cake') }}">
+                <a class="nav-link" href="{{ route('cake.index') }}">
                     <i class="fas fa-fw fa-birthday-cake"></i>
                     <span>Data Kue</span></a>
             </li>
@@ -52,13 +52,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-                    <!-- Topbar -->
-                    @include('includes.navbar')
-                    <!-- End of Topbar -->
-
-                </nav>
+                @include('includes.navbar')
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
@@ -71,7 +65,9 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <a href="{{ route('cake') }}" class="btn btn-warning">Kembali</a>
+                            <a href="{{ route('cake.index') }}" class="btn btn-danger">
+                                <i class="fas fa-fw fa-arrow-left"></i> Kembali
+                            </a>
                         </div>
                         <div class="card-body">
                             <div class="text-center">

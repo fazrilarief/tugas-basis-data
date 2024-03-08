@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cake;
+use App\Models\User;
 
 class CakeController extends Controller
 {
@@ -13,7 +14,8 @@ class CakeController extends Controller
     public function index()
     {
         $cakes = Cake::all();
-        return view('pages.cake', compact('cakes'));
+        $users = User::all();
+        return view('pages.cake.cake', compact('cakes', 'users'));
     }
 
     /**
@@ -21,7 +23,7 @@ class CakeController extends Controller
      */
     public function create()
     {
-        return view('pages.create');
+        return view('pages.cake.create');
     }
 
     /**
@@ -31,8 +33,10 @@ class CakeController extends Controller
     {
         $validated = $request->validate([
             'nama' => 'required|string|max:255',
-            'nim' => 'required|integer',
+            'harga' => 'required|integer',
             'foto' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'creator_name' => 'required',
+            'creator_nim' => 'required',
         ]);
 
         $cake = Cake::create($validated);
@@ -46,7 +50,7 @@ class CakeController extends Controller
             $cake->save();
         }
 
-        return redirect()->route('cake');
+        return redirect()->route('cake.index');
     }
 
     /**
@@ -55,7 +59,7 @@ class CakeController extends Controller
     public function show(string $id)
     {
         $cakes = Cake::findOrFail($id);
-        return view('pages.show', compact('cakes'));
+        return view('pages.cake.show', compact('cakes'));
     }
 
     /**
@@ -64,7 +68,7 @@ class CakeController extends Controller
     public function edit(string $id)
     {
         $cakes = Cake::findOrFail($id);
-        return view('pages.edit', compact('cakes'));
+        return view('pages.cake.edit', compact('cakes'));
     }
 
     /**
