@@ -51,7 +51,7 @@
                                 <div class="mb-3">
                                     <label for="harga" class="form-label">harga</label>
                                     <input type="number" id="harga" name="harga" class="form-control"
-                                        value="{{ old('nama', $cakes->nim) }}" required>
+                                        value="{{ old('nama', $cakes->harga) }}" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="foto_kue" class="form-label">Foto Kue</label>
@@ -61,14 +61,21 @@
                                     <br>
                                     <img src="{{ asset('fotoKue/' . $cakes->foto) }}" alt="foto" style="height: 8rem;">
                                 </div>
-                            </div>
-                            <div class="card-footer">
-                                <div class="row">
-                                    <div class="col d-flex justify-content-end">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                <div class="mb-3">
+                                    <input type="text" id="creator_name" name="creator_name" class="form-control"
+                                        value="{{ auth()->user()->name }}" required readonly hidden>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" id="creator_nim" name="creator_nim" class="form-control"
+                                        value="{{ auth()->user()->nim }}" required readonly hidden>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="row">
+                                        <div class="col d-flex justify-content-end">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                         </form>
                     </div>
 

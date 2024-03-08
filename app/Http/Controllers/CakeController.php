@@ -78,8 +78,10 @@ class CakeController extends Controller
     {
         $validated = $request->validate([
             'nama' => 'required|string|max:255',
-            'nim' => 'required|integer',
+            'harga' => 'required|integer',
             'foto' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'creator_name' => 'required',
+            'creator_nim' => 'required',
         ]);
 
         $cake = Cake::findOrFail($id);
@@ -94,7 +96,7 @@ class CakeController extends Controller
             $cake->save();
         }
 
-        return redirect()->route('cake');
+        return redirect()->route('cake.index');
     }
 
     /**
