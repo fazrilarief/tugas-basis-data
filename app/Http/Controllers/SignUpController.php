@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\Password;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class SignUpController extends Controller
 {
@@ -24,6 +25,7 @@ class SignUpController extends Controller
         $user = User::create($validated);
 
         if ($user) {
+            Alert::success('Sukses', 'Berhasil mendaftarkan akun, silahkan login!');
             return redirect()->route('login');
         }
     }

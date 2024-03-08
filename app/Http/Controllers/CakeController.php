@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Cake;
 use App\Models\User;
+use Alert;
 
 class CakeController extends Controller
 {
@@ -50,6 +51,7 @@ class CakeController extends Controller
             $cake->save();
         }
 
+        Alert::success('Sukses', 'Berhasil menambahkan data kue!');
         return redirect()->route('cake.index');
     }
 
@@ -96,6 +98,7 @@ class CakeController extends Controller
             $cake->save();
         }
 
+        Alert::warning('Perhtian', 'Berhasil mengubah data kue!');
         return redirect()->route('cake.index');
     }
 
@@ -110,6 +113,7 @@ class CakeController extends Controller
         $cake->delete();
         // Mengembalikan halaman
         if ($cake) {
+            Alert::warning('Peringatan', 'Anda baru saja menghapus sebuah data kue!');
             return redirect()->back();
         }
     }

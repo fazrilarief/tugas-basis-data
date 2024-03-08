@@ -6,6 +6,7 @@
 </head>
 
 <body id="page-top">
+    @include('sweetalert::alert')
     @yield('content')
     @include('includes.script')
 </body>

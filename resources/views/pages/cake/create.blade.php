@@ -29,31 +29,31 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Tambahkan Data Kue</h6>
-                            @if ($errors->any())
-                                <div class="alert alert-danger m-4">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
                         </div>
                         <form action="{{ route('cake.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
+                                @if ($errors->any())
+                                    <div class="alert alert-danger p-1 mt-2 mb-2">
+                                        <ul class="list-unstyled">
+                                            @foreach ($errors->all() as $error)
+                                                <li><i class="fas fa-exclamation-circle"></i>
+                                                    {{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
                                 <div class="mb-3">
                                     <label for="nama" class="form-label">Nama</label>
-                                    <input type="text" id="nama" name="nama" class="form-control" required
-                                        autofocus>
+                                    <input type="text" id="nama" name="nama" class="form-control" autofocus>
                                 </div>
                                 <div class="mb-3">
                                     <label for="harga" class="form-label">Harga</label>
-                                    <input type="number" id="harga" name="harga" class="form-control" required>
+                                    <input type="number" id="harga" name="harga" class="form-control">
                                 </div>
                                 <div class="mb-3">
                                     <label for="foto_kue" class="form-label">Foto Kue</label>
-                                    <input type="file" id="foto_kue" name="foto" class="form-control" required>
+                                    <input type="file" id="foto_kue" name="foto" class="form-control">
                                 </div>
                                 <div class="mb-3">
                                     <input type="text" id="creator_name" name="creator_name" class="form-control"

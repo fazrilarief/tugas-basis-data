@@ -24,19 +24,43 @@
                                         <div class="text-center">
                                             <h1 class="h4 text-gray-900 mb-4">Buat Akun</h1>
                                         </div>
+                                        {{-- @if ($errors->any())
+                                            <div class="alert alert-danger m-4 p-0">
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif --}}
                                         <form action="{{ route('auth.signup') }}" method="POST" class="user">
                                             @csrf
                                             <div class="form-group">
+                                                @error('name')
+                                                    <div class="alert alert-danger p-1 m-1" role="alert">
+                                                        <i class="fas fa-exclamation-circle"></i> {{ $message }}
+                                                    </div>
+                                                @enderror
                                                 <input type="text" name="name" class="form-control form-control-user"
                                                     id="exampleInputEmail" aria-describedby="emailHelp"
                                                     placeholder="Your Name...">
                                             </div>
                                             <div class="form-group">
+                                                @error('nim')
+                                                    <div class="alert alert-danger p-1 m-1">
+                                                        <i class="fas fa-exclamation-circle"></i> {{ $message }}
+                                                    </div>
+                                                @enderror
                                                 <input type="nim" name="nim" class="form-control form-control-user"
                                                     id="exampleInputEmail" aria-describedby="emailHelp"
                                                     placeholder="Enter your NIM...">
                                             </div>
                                             <div class="form-group">
+                                                @error('password')
+                                                    <div class="alert alert-danger p-1 m-1">
+                                                        <i class="fas fa-exclamation-circle"></i> {{ $message }}
+                                                    </div>
+                                                @enderror
                                                 <input type="password" name="password"
                                                     class="form-control form-control-user" id="exampleInputPassword"
                                                     placeholder="Password">
