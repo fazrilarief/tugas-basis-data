@@ -117,4 +117,17 @@ class CakeController extends Controller
             return redirect()->back();
         }
     }
+
+    public function downloadPdf()
+    {
+        $mpdf = new \Mpdf\Mpdf([
+            'mode' => 'utf-8',
+            'format' => 'A4-L',
+            'orientation' => 'L'
+        ]);
+
+        $cakes = Cake::all();
+        $mpdf->WriteHTML(view('pages.cake.pdf', compact('cakes')));
+        $mpdf->Output('kue.pdf', 'D');
+    }
 }

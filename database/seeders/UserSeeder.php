@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
         $userData = [
             [
                 'name' => 'Fazril Arief Nugraha',
-                'email' => 'fazril@example.com',
+                'nim' => '201011401840',
                 'password' => bcrypt('fazril123'),
             ]
         ];

@@ -35,5 +35,13 @@ Route::middleware('auth')->group(function () {
         return view('pages.home');
     })->name('home');
 
-    Route::resource('/cake', CakeController::class);
+    // Route::resource('/cake', CakeController::class);
+    Route::get('/cake', [CakeController::class, 'index'])->name('cake.index');
+    Route::get('/cake/create', [CakeController::class, 'create'])->name('cake.create');
+    Route::post('/cake/store', [CakeController::class, 'store'])->name('cake.store');
+    Route::get('/cake/show{id}', [CakeController::class, 'show'])->name('cake.show');
+    Route::get('/cake/edit{id}', [CakeController::class, 'edit'])->name('cake.edit');
+    Route::put('/cake/update{id}', [CakeController::class, 'update'])->name('cake.update');
+    Route::delete('/cake/destroy{id}', [CakeController::class, 'destroy'])->name('cake.destroy');
+    Route::get('/cake/downloadPdf', [CakeController::class, 'downloadPdf'])->name('cake.downloadpdf');
 });

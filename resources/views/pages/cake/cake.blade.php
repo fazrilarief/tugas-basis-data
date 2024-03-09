@@ -31,6 +31,9 @@
                             <a href="{{ route('cake.create') }}" class="btn btn-primary">
                                 <i class="fas fa-fw fa-plus"></i> Tambah Data
                             </a>
+                            <a href="{{ route('cake.downloadpdf') }}" class="btn btn-danger">
+                                <i class="fas fa-file-pdf"></i> Download
+                            </a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
