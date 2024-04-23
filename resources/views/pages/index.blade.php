@@ -33,8 +33,8 @@
                                         <div class="row">
                                             <div class="col-md-12 text-nowrap text-center">
                                                 <p>Fazril Arief Nugraha - 201011401840</p>
-                                                <p>Fazril Arief Nugraha - 201011401840</p>
-                                                <p>Fazril Arief Nugraha - 201011401840</p>
+                                                <p>Rifqi Hifdzudin Ahmad - 221011400472</p>
+                                                <p>Kevin Abdurrahman - 221011402667</p>
                                             </div>
                                         </div>
                                         <hr>

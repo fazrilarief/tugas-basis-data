@@ -53,8 +53,8 @@
                                 <h1><u>Kelompok 10 - Kue</u></h1>
                                 <br>
                                 <p>Fazril Arief Nugraha - 201011401840</p>
-                                <p>Fazril Arief Nugraha - 201011401840</p>
-                                <p>Fazril Arief Nugraha - 201011401840</p>
+                                <p>Rifqi Hifdzudin Ahmad - 221011400472</p>
+                                <p>Kevin Abdurrahman - 221011402667</p>
                             </div>
                         </div>
 
