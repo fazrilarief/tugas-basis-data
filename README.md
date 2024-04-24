@@ -1,4 +1,4 @@
-T## About this Project
+## About this Project
 
 <p>Project ini kami bangun sebagai salah satu syarat untuk dapat lulus pada matakuliah Basis Data 1.</p>
 <p>Project ini memiliki fungsi untuk mencatat data kue lengkap dengan harga serta foto dari kue tersebut</p>
@@ -8,7 +8,7 @@ T## About this Project
  <li><a href="https://github.com/fazrilarief">Fazril Arief Nugraha</a> - 201011401840</li>
  <li><a href="https://github.com/KevinAbdurrahman">Rifqi Hifdzudin Ahmad</a> - 221011400472</li>
  <li><a href="https://github.com/KUSHOGAKI">Kevin Abdurrahman</a> - 221011402667</li>
-</ul>ry Demo for Free : https://basisdata.fazrilnugraha.my.id/
+</ul>
 ## Tools
 <ul>
   <li><h3>Front-End</h3></li>
