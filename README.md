@@ -9,6 +9,7 @@
  <li><a href="https://github.com/KevinAbdurrahman">Rifqi Hifdzudin Ahmad</a> - 221011400472</li>
  <li><a href="https://github.com/KUSHOGAKI">Kevin Abdurrahman</a> - 221011402667</li>
 </ul>
+
 ## Tools
 <ul>
   <li><h3>Front-End</h3></li>
@@ -37,3 +38,10 @@
   <img src="https://skillicons.dev/icons?i=mysql" height="30" alt="mysql logo"  />
   <img width="12" />
 </div>
+
+
+
+## Our Contributors ?
+<a href="https://github.com/fazrilarief/tugas-basis-data/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=fazrilarief/tugas-basis-data" />
+</a>
