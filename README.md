@@ -1,4 +1,4 @@
-## About this Project
+## 👋 About this Project
 
 <p>Project ini kami bangun sebagai salah satu syarat untuk dapat lulus pada matakuliah Basis Data 1.</p>
 <p>Project ini memiliki fungsi untuk mencatat data kue lengkap dengan harga serta foto dari kue tersebut</p>
@@ -10,7 +10,7 @@
  <li><a href="https://github.com/KUSHOGAKI">Kevin Abdurrahman</a> - 221011402667</li>
 </ul>
 
-## Tools
+## 🛠 Tools
 <ul>
   <li><h3>Front-End</h3></li>
 </ul>
@@ -41,7 +41,7 @@
 
 
 
-## Our Contributors ?
+## ✨ Our Contributors
 <a href="https://github.com/fazrilarief/tugas-basis-data/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=fazrilarief/tugas-basis-data" />
 </a>
